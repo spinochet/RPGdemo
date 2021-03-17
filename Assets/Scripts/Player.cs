@@ -49,6 +49,8 @@ public class Player : MonoBehaviour, IsAttackable
     {
         Move();
         UpdateCamera();
+
+        anim.SetBool("attack", Input.GetButtonDown("Attack"));
     }
 
     // -------------------------

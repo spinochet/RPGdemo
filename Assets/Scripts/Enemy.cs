@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour, IsAttackable
     // Update is called once per frame
     void Update()
     {
-        currentHP -= Time.deltaTime;
         UpdateHealthBar();
     }
 
@@ -37,6 +36,11 @@ public class Enemy : MonoBehaviour, IsAttackable
         Debug.Log("Damage received: " + damage);
         currentHP -= damage;
         Debug.Log("Current HP" + currentHP);
+
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void UpdateHealthBar()
